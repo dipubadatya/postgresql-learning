@@ -18,7 +18,7 @@ This repository is intended to:
 | Day   | Topics Covered                         |
 | :---- | :------------------------------------- |
 | Day 1 | CRUD Operations, PostgreSQL Data Types |
-
+| Day 2 | Constraints, DISTINCT, Data Refining Clauses, Aggregate Functions, String Functions  |
 > The progress table is updated as new topics are completed.
 
 ---
@@ -37,6 +37,14 @@ postgresql-learning/
 │   ├── 06_delete.sql
 │   ├── 07_drop_table.sql
 │   └── 08_data_types.sql
+│
+├── Day-02/
+│   ├── 01_create_table_with_constraints.sql
+│   ├── 02_insert_data.sql
+│   ├── 03_distinct.sql
+│   ├── 04_data_refining_clauses.sql
+│   ├── 05_aggregate_functions.sql
+│   └── 06_string_functions.sql
 │
 └── README.md
 ```
