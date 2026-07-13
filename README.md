@@ -45,7 +45,12 @@ postgresql-learning/
 │   ├── 04_data_refining_clauses.sql
 │   ├── 05_aggregate_functions.sql
 │   └── 06_string_functions.sql
-│
+│ 
+│ 
+├── Exercises/
+│   ├── 01_practice.sql
+│   ├── 02_practice.sql
+│   └── README.md
 └── README.md
 ```
 
