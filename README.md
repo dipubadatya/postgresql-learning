@@ -15,10 +15,16 @@ This repository is intended to:
 
 ## Learning Progress
 
-| Day   | Topics Covered                         |
-| :---- | :------------------------------------- |
-| Day 1 | CRUD Operations, PostgreSQL Data Types |
-| Day 2 | Constraints, DISTINCT, Data Refining Clauses, Aggregate Functions, String Functions  |
+
+## Learning Progress
+
+| Day   | Topics Covered                                                                       |
+| :---- | :----------------------------------------------------------------------------------- |
+| [Day 1](Day-01-CRUD/) | CRUD Operations, PostgreSQL Data Types                                               |
+| [Day 2](Day-02-Queries/) | Constraints, DISTINCT, Data Refining Clauses, Aggregate Functions, String Functions  |
+| [Day 3](Day-03-Joins/) | ALTER TABLE, CHECK Constraint, CASE Expression, Relationships, Joins                 |
+
+
 > The progress table is updated as new topics are completed.
 
 ---
@@ -46,11 +52,19 @@ postgresql-learning/
 │   ├── 05_aggregate_functions.sql
 │   └── 06_string_functions.sql
 │ 
+├── Day-03/
+│   ├── 01_alter_table.sql
+│   ├── 02_check_constraint.sql
+│   ├── 03_case_expression.sql
+│   ├── 04_relationships.sql
+│   ├── 05_one_to_one.sql
+│   └── 06_joins.sql
 │ 
 ├── Exercises/
 │   ├── 01_practice.sql
-│   ├── 02_practice.sql
-│   └── README.md
+│   └── 02_practice.sql
+│ 
+│ 
 └── README.md
 ```
 

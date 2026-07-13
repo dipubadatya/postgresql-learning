@@ -1,0 +1,108 @@
+-- =====================================================
+-- Topic: Relationships and Their Types
+-- Description:
+-- In a relational database, tables are connected
+-- to each other through relationships.
+-- This avoids repeating the same data in multiple
+-- tables (called data redundancy).
+--
+-- Real Life Example:
+-- Instead of storing a student's full address
+-- in every course record, we store it once in
+-- the student table and just reference it.
+--
+-- There are 3 types of relationships:
+--
+-- ┌─────────────────────┬──────────────────────────────────────────┐
+-- │ Relationship Type   │ Real World Example                       │
+-- ├─────────────────────┼──────────────────────────────────────────┤
+-- │ One to One (1:1)    │ One person has one passport              │
+-- │ One to Many (1:N)   │ One teacher teaches many students        │
+-- │ Many to Many (M:N)  │ Students enroll in many courses and      │
+-- │                     │ courses have many students               │
+-- └─────────────────────┴──────────────────────────────────────────┘
+--
+-- Key Terms:
+-- PRIMARY KEY → Uniquely identifies each row in a table
+-- FOREIGN KEY → A column that references the PRIMARY KEY
+--               of another table to create the link
+-- =====================================================
+
+
+-- =====================================================
+-- 1. ONE TO ONE (1:1)
+-- Description:
+-- One record in Table A links to exactly ONE record
+-- in Table B. Neither side can have more than one.
+--
+-- Example: One employee has one identity card.
+--          One identity card belongs to one employee.
+--
+--  employee              identity_card
+-- ┌────┬───────┐        ┌────┬─────────────┬─────────────┐
+-- │ id │ name  │        │ id │ employee_id │ card_number │
+-- ├────┼───────┤        ├────┼─────────────┼─────────────┤
+-- │  1 │ Alice │◄───────│  1 │      1      │  EMP-0001   │
+-- │  2 │ Bob   │◄───────│  2 │      2      │  EMP-0002   │
+-- └────┴───────┘        └────┴─────────────┴─────────────┘
+-- UNIQUE on employee_id ensures it stays 1:1
+-- =====================================================
+
+
+-- =====================================================
+-- 2. ONE TO MANY (1:N)
+-- Description:
+-- One record in Table A links to MANY records
+-- in Table B. But each record in B links to only one
+-- record in A.
+--
+-- Example: One department has many employees.
+--          Each employee belongs to one department.
+--
+--  department           employee
+-- ┌────┬─────────────┐  ┌────┬───────┬───────────────┐
+-- │ id │    name     │  │ id │ name  │ department_id │
+-- ├────┼─────────────┤  ├────┼───────┼───────────────┤
+-- │  1 │ Engineering │◄─│  1 │ Alice │       1       │
+-- │    │             │◄─│  2 │ Bob   │       1       │
+-- │  2 │ Marketing   │◄─│  3 │ Carol │       2       │
+-- └────┴─────────────┘  └────┴───────┴───────────────┘
+-- =====================================================
+
+
+-- =====================================================
+-- 3. MANY TO MANY (M:N)
+-- Description:
+-- Many records in Table A link to many records
+-- in Table B and vice versa.
+-- We need a JUNCTION TABLE (middle table) to handle this.
+--
+-- Example: Students enroll in many courses.
+--          Each course has many students.
+--
+--  student              enrollment (junction)   course
+-- ┌────┬───────┐       ┌────────────┬──────────┐  ┌────┬──────────┐
+-- │ id │ name  │       │ student_id │ course_id│  │ id │  name    │
+-- ├────┼───────┤       ├────────────┼──────────┤  ├────┼──────────┤
+-- │  1 │ Alice │──────►│     1      │    1     │◄─│  1 │ Math     │
+-- │  1 │ Alice │──────►│     1      │    2     │◄─│  2 │ Science  │
+-- │  2 │ Bob   │──────►│     2      │    1     │  └────┴──────────┘
+-- └────┴───────┘       └────────────┴──────────┘
+-- =====================================================
+
+
+-- =====================================================
+-- FOREIGN KEY Rules (ON DELETE behavior)
+--
+-- What happens to child rows when parent row is deleted?
+--
+-- ┌─────────────────┬──────────────────────────────────────────┐
+-- │ Option          │ What happens                             │
+-- ├─────────────────┼──────────────────────────────────────────┤
+-- │ RESTRICT        │ Block delete if child rows exist         │
+-- │ CASCADE         │ Delete child rows automatically          │
+-- │ SET NULL        │ Set foreign key to NULL in child rows    │
+-- │ SET DEFAULT     │ Set foreign key to DEFAULT in child rows │
+-- │ NO ACTION       │ Same as RESTRICT (default behavior)      │
+-- └─────────────────┴──────────────────────────────────────────┘
+-- =====================================================
