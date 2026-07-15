@@ -23,7 +23,9 @@ This repository is intended to:
 | [Day 1](Day-01-CRUD/) | CRUD Operations, PostgreSQL Data Types                                               |
 | [Day 2](Day-02-Queries/) | Constraints, DISTINCT, Data Refining Clauses, Aggregate Functions, String Functions  |
 | [Day 3](Day-03-Joins/) | ALTER TABLE, CHECK Constraint, CASE Expression, Relationships, Joins                 |
-| [Day 4](Day-04-Advanced-Relationships/)  | One-to-Many, Many-to-Many, Views, HAVING Clause, Stored Procedures                  |             
+| [Day 4](Day-04-Advanced-Relationships/)  | One-to-Many, Many-to-Many, Views, HAVING Clause, Stored Procedures                  |    
+| [Day 5](Day-05-Functions-And-Triggers/) | User Defined Functions, Window Functions, CTEs, Triggers |
+
 
 
 > The progress table is updated as new topics are completed.
@@ -70,6 +72,13 @@ postgresql-learning/
 │   ├── 06_having_clause.sql
 │   └── 07_stored_procedures.sql
 │
+├── Day-05/
+│   ├── 00_setup.sql
+│   ├── 01_user_defined_functions.sql
+│   ├── 02_window_defined_functions.sql
+│   ├── 03_common_table_expression.sql
+│   └── 04_triggers.sql
+│ 
 ├── Exercises/
 │   ├── 01_practice.sql
 │   └── 02_practice.sql
